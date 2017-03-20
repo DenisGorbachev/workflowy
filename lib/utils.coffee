@@ -22,6 +22,13 @@ module.exports = utils =
   getUrl: (node) ->
     "https://workflowy.com/#/#{utils.getSegmentId node}"
 
+  cleanName: (name) ->
+    utils.removeHtml utils.removeTags utils.makeBold name, false
+
+  breadcrumbs: (node) ->
+    parent = node
+    (utils.cleanName parent.nm while parent = parent.parent).join ' < '
+
   getSegmentId: (node) -> (''+node.id).replace(/.*-/,'')
 
   checkForErrors: ([resp, body]) ->
