@@ -3,7 +3,7 @@ fs = require 'fs'
 Q = require 'q'
 path = require 'path'
 Workflowy = require '../'
-FileCookieStore = require 'tough-cookie-filestore'
+FileCookieStore = require 'tough-cookie-filestore-mikerobe'
 proxy = require '../lib/proxy'
 utils = require '../lib/utils'
 

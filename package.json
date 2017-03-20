@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "mocha": "^3.0.2",
-    "tough-cookie-filestore": "mikerobe/tough-cookie-filestore#master"
+    "tough-cookie-filestore-mikerobe": "mikerobe/tough-cookie-filestore-mikerobe#master"
   }
 }
