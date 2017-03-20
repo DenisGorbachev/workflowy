@@ -10,8 +10,11 @@ module.exports = utils =
     throw new Error "Invalid shareId [#{shareId}]" unless ///^[a-zA-Z0-9]*$///.test shareId
     shareId
 
-  getTimestamp: (meta) ->
-    Math.floor (Date.now() - meta.projectTreeData.mainProjectTreeInfo.dateJoinedTimestampInSeconds) / 60
+  getTimestamp: (meta, date=Date.now()) ->
+    Math.floor(date/1000) - meta.projectTreeData.mainProjectTreeInfo.dateJoinedTimestampInSeconds
+
+  timestampToDate: (meta, cpTime) ->
+    1000 * (cpTime + meta.projectTreeData.mainProjectTreeInfo.dateJoinedTimestampInSeconds)
 
   makePollId: ->
     _.sampleSize('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 8).join('')

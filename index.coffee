@@ -289,3 +289,7 @@ module.exports = class Workflowy
         node.no = newNotes[i] ? newNotes[node.id] ? node.no
         node.lm = timestamp
       timestamp
+
+  timestampToDate: (cpTime) ->
+    @meta.then (meta) -> utils.timestampToDate cpTime
+
